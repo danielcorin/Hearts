@@ -7,8 +7,8 @@ from Trick import Trick
 Change auto to False if you would like to play the game manually.
 This allows you to make all passes, and plays for all four players.
 When auto is True, passing is disabled and the computer plays the
-game by "guess and check", randomly trying moves until a valid one
-is made.
+game by "guess and check", randomly trying moves until it finds a
+valid one.
 '''
 auto = False
 
