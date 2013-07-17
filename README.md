@@ -1,6 +1,6 @@
 #Hearts
 
-A Python implementation of Hearts. This project is a work in progress. My hope is to utilize machine learning techniques to "teach" computer opponents to player competitively.
+A Python implementation of Hearts. This project is a work in progress. My future goal is to utilize machine learning techniques to "teach" computer opponents to player competitively.
 
 #Objective
 Win all the hearts and the queen of spades, or none of these cards. Get as few points as possbile.
