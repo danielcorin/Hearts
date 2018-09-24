@@ -1,11 +1,11 @@
-#Hearts
+# Hearts
 
-A Python implementation of Hearts. This project is a work in progress. My future goal is to utilize machine learning techniques to "teach" computer opponents to player competitively.
+A Python implementation of Hearts. This project is a work in progress. My future goal is to utilize machine learning techniques to "teach" computer opponents to play competitively.
 
-#Objective
+# Objective
 Win all the hearts and the queen of spades, or none of these cards. Get as few points as possbile.
 
-#Rules
+# Rules
 * Each of the four player is dealt 13 cards.
 
 * Before the round starts, all four players pass three cards, left, right, across, or no pass: the game cycles through these four instances with the passing of rounds.
@@ -26,5 +26,5 @@ Win all the hearts and the queen of spades, or none of these cards. Get as few p
 
 * The game ends when the first player gets to 100. The winner is the player with the fewest points.
 
-#Implementation
+# Implementation
 The game can be played manually or simulated by the computer. This mode can be toggled at the top of the `Hearts.py` file by changing the variable `auto` between `True` and `False`. The computer will play until one player's score reaches 100 and then the game ends with the final score display. The computer uses a "guess and check" method to play the game. It will attempt to play a card from the current player's hand at random. If the play is valid, the game moves on to the next player. If the play is invalid, the computer is forced to try again, until it makes a valid play. Passing is disabled for the computer simulation.
