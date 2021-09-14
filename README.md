@@ -22,7 +22,7 @@ Win all the hearts and the queen of spades, or none of these cards. Get as few p
 
 * A player receives one point per heart and 13 points for the queen of spades.
 
-* If a player has all of the points, he or she has "shot the moon" and all other players get 26 points (not yet implemented).
+* If a player has all of the points, he or she has "shot the moon" and all other players get 26 points.
 
 * The game ends when the first player gets to 100. The winner is the player with the fewest points.
 
