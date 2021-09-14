@@ -14,9 +14,9 @@ class Hand:
 		self.diamonds = []
 		self.spades = []
 		self.hearts = []
-		
+
 		# create hand of cards split up by suit
-		self.hand = [self.clubs, self.diamonds, 
+		self.hand = [self.clubs, self.diamonds,
 					self.spades, self.hearts]
 
 		self.contains2ofclubs = False
@@ -43,7 +43,7 @@ class Hand:
 				suit.sort()
 
 	def updateHand(self):
-		self.hand = [self.clubs, self.diamonds, 
+		self.hand = [self.clubs, self.diamonds,
 					self.spades, self.hearts]
 
 	def getRandomCard(self):
@@ -51,7 +51,7 @@ class Hand:
 		suit = self.hand[suit]
 		while len(suit) == 0:
 			suit = randint(0,3)
-			suit = self.hand[suit] 
+			suit = self.hand[suit]
 		index = randint(0, len(suit)-1)
 
 		return suit[index]
@@ -60,9 +60,9 @@ class Hand:
 
 	def strToCard(self, card):
 		if len(card) == 0: return None
-		
+
 		suit = card[len(card)-1].lower() # get the suit from the string
-		
+
 		try:
 			suitIden = suits.index(suit)
 		except:
@@ -70,7 +70,7 @@ class Hand:
 			return None
 
 		cardRank = card[0:len(card)-1] # get rank from string
-		
+
 		try:
 			cardRank = cardRank.upper()
 		except AttributeError:
@@ -98,10 +98,10 @@ class Hand:
 		for card in self.hand[suitIden]:
 			if card.rank.rank == cardRank:
 				cardToPlay = card
-					
+
 				# remove cardToPlay from hand
 				# self.hand[suitIden].remove(card)
-				
+
 				# update hand representation
 				# self.updateHand()
 				return cardToPlay
@@ -114,7 +114,7 @@ class Hand:
 			return None
 		else:
 			cardRank, suitIden = cardInfo[0], cardInfo[1]
-		
+
 		# see if player has that card in hand
 		return self.containsCard(cardRank, suitIden)
 
@@ -141,5 +141,3 @@ class Hand:
 			for card in suit:
 				handStr += card.__str__() + ' '
 		return handStr
-
-

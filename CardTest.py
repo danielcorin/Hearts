@@ -51,4 +51,3 @@ print "c >= c1", c >= c1
 print "c <= c1", c <= c1
 print "c < c1", c < c1
 print "c > c1", c > c1
-
