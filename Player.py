@@ -5,6 +5,7 @@ class Player:
 			self.name = name
 			self.hand = Hand()
 			self.score = 0
+			self.roundScore = 0
 			self.tricksWon = []
 
 	def addCard(self, card):
@@ -30,7 +31,7 @@ class Player:
 
 
 	def trickWon(self, trick):
-		self.score += trick.points
+		self.roundScore += trick.points
 
 
 	def hasSuit(self, suit):

@@ -53,6 +53,23 @@ class Hearts:
 
 	def handleScoring(self):
 		p, highestScore = None, 0
+		for player in self.players:
+			if player.roundScore == 26:
+				p = player
+				player.roundScore = 0
+				break
+
+		if p is not None:
+			print p.name + " shot the moon!"
+			for player in self.players:
+				if player != p:
+					player.roundScore = 26
+			p = None
+
+		for player in self.players:
+			player.score += player.roundScore
+			player.roundScore = 0
+
 		print "\nScores:\n"
 		for player in self.players:
 			print player.name + ": " + str(player.score)
@@ -228,6 +245,7 @@ class Hearts:
 	def printPlayer(self, i):
 		p = self.players[i]
 		print p.name + "'s hand: " + str(p.hand)
+		print p.name + "'s round score: " + str(p.roundScore)
 
 	# print all players' hands
 	def printPlayers(self):
