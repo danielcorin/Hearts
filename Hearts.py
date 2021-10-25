@@ -22,7 +22,7 @@ cardsToPass = 3
 
 class Hearts:
 	def __init__(self):
-		
+
 		self.roundNum = 0
 		self.trickNum = 0 # initialization value such that first round is round 0
 		self.dealer = -1 # so that first dealer is 0
@@ -37,7 +37,7 @@ class Hearts:
 		# Make four players
 
 		self.players = [Player("Danny"), Player("Desmond"), Player("Ben"), Player("Tyler")]
-		
+
 		'''
 		Player physical locations:
 		Game runs clockwise
@@ -78,7 +78,7 @@ class Hearts:
 				highestScore = player.score
 			self.losingPlayer = p
 
-		
+
 
 	def newRound(self):
 		self.deck = Deck()
@@ -115,7 +115,7 @@ class Hearts:
 		# print 'Making new trick'
 		self.currentTrick = Trick()
 		print self.currentTrick.suit
-		
+
 
 	def passCards(self, index):
 		print self.printPassingCards()
@@ -149,7 +149,7 @@ class Hearts:
 
 
 	def playersPassCards(self):
-		
+
 		self.printPlayers()
 		if not self.trickNum % 4 == 3: # don't pass every fourth hand
 			for i in range(0, len(self.players)):
@@ -180,14 +180,14 @@ class Hearts:
 			addCard = None
 
 			while addCard is None: # wait until a valid card is passed
-				
+
 				addCard = curPlayer.play(auto=auto) # change auto to False to play manually
 
 
 				# the rules for what cards can be played
 				# card set to None if it is found to be invalid
 				if addCard is not None:
-					
+
 					# if it is not the first trick and no cards have been played,
 					# set the first card played as the trick suit if it is not a heart
 					# or if hearts have been broken
@@ -228,7 +228,7 @@ class Hearts:
 							print "Hearts not yet broken."
 							addCard = None
 
-					
+
 
 					if addCard is not None:
 						if addCard == Card(queen, spades):
@@ -237,7 +237,7 @@ class Hearts:
 
 
 			self.currentTrick.addCard(addCard, curPlayerIndex)
-			
+
 		self.evaluateTrick()
 		self.trickNum += 1
 
@@ -250,7 +250,7 @@ class Hearts:
 	# print all players' hands
 	def printPlayers(self):
 		for p in self.players:
-			print p.name + ": " + str(p.hand) 
+			print p.name + ": " + str(p.hand)
 
 	# show cards played in current trick
 	def printCurrentTrick(self):
@@ -281,7 +281,7 @@ def main():
 	# play until someone loses
 	while hearts.losingPlayer is None or hearts.losingPlayer.score < maxScore:
 		while hearts.trickNum < totalTricks:
-			print "Round", hearts.roundNum 
+			print "Round", hearts.roundNum
 			if hearts.trickNum == 0:
 				if not auto:
 					hearts.playersPassCards()
@@ -304,4 +304,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-

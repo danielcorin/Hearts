@@ -113,5 +113,3 @@ class Rank:
 
 	def __str__(self):
 		return self.string
-
-
